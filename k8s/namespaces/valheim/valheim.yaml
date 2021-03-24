@@ -76,6 +76,7 @@ spec:
       containers:
       - name: valheim
         image: guilledipa/valheim:latest
+        imagePullPolicy: Always
         env:
           - name: VALHEIM_PASSWORD
             valueFrom:
