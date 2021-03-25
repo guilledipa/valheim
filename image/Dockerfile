@@ -22,7 +22,7 @@ RUN chmod +x /entrypoint.sh && \
     mkdir ${VALHEIM_SERVER_DIR} && \
     chown -R steam:steam ${VALHEIM_SERVER_DIR} && \
     mkdir ${VALHEIM_DATA_DIR} && \
-    chown -R steam:steam ${VALHEIM_DATA_DIR} \
+    chown -R steam:steam ${VALHEIM_DATA_DIR} && \
     ./steamcmd.sh +login anonymous \
         +force_install_dir ${VALHEIM_SERVER_DIR} \
         +app_update ${STEAMAPPID} \
