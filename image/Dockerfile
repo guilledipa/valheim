@@ -18,12 +18,12 @@ EXPOSE 2457/udp
 EXPOSE 2458/udp
 
 COPY --chown=steam:steam entrypoint.sh /
-RUN chmod +x /entrypoint.sh
-RUN mkdir ${VALHEIM_SERVER_DIR} && chown -R steam:steam ${VALHEIM_SERVER_DIR}
-RUN mkdir ${VALHEIM_DATA_DIR} && chown -R steam:steam ${VALHEIM_DATA_DIR}
-
-# Install the Valheim server
-RUN ./steamcmd.sh +login anonymous \
+RUN chmod +x /entrypoint.sh && \
+    mkdir ${VALHEIM_SERVER_DIR} && \
+    chown -R steam:steam ${VALHEIM_SERVER_DIR} && \
+    mkdir ${VALHEIM_DATA_DIR} && \
+    chown -R steam:steam ${VALHEIM_DATA_DIR} \
+    ./steamcmd.sh +login anonymous \
         +force_install_dir ${VALHEIM_SERVER_DIR} \
         +app_update ${STEAMAPPID} \
         validate +exit
