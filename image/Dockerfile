@@ -1,4 +1,3 @@
-# New build
 FROM cm2network/steamcmd:latest
 
 LABEL maintainer="guilledipasquale@gmail.com"
